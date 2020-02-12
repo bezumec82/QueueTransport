@@ -3,8 +3,8 @@
 #include <iostream>
 #include <functional>
 
-#include "Transport.hpp"
-#include "Debug.hpp"
+#include "Transport.h"
+#include "Tools.h"
 
 #define CYCLES  4
 
@@ -36,9 +36,9 @@ void readAny (std::any& a)
         std::cout << a.type().name() << " : " << std::any_cast < std::string > (a) << '\n';
         std::cout << "EXCEPTION"     << " : " << std::any_cast < int > (a)         << '\n';
     }
-    catch (const std::exception& e)
+    catch (const std::bad_any_cast& bac)
     {
-        std::cout << e.what() << '\n';
+        std::cout << bac.what() << '\n';
     }
 }
 

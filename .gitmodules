@@ -1,0 +1,3 @@
+[submodule "libs/Tools"]
+	path = libs/Tools
+	url = https://github.com/bezumec82/Tools
